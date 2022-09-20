@@ -29,9 +29,8 @@ class TokenBucket(object):
             self._totalNums = 0
             return self._maxToken
         elif self._totalNums >= numTokens:
-            res = numTokens
             self._totalNums -= numTokens
-            return res
+            return numTokens
         elif self._totalNums < numTokens:
             res = self._totalNums
             self._totalNums = 0
