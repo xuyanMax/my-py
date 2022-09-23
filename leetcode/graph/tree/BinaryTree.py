@@ -1,4 +1,4 @@
-from dfs.TreeNode import TreeNode
+from graph.dfs.TreeNode import TreeNode
 
 
 class BinaryTreeUtils(object):
