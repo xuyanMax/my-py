@@ -12,7 +12,7 @@ def networkDelayTime(self, times, N, K):
     queue, distToEnd, adj = [(0, K)], collections.defaultdict(list)
     dist = [Inf for _ in len(times)]
     for u, v, w in times:
-        queue[u].append((v, w))
+        adj[u].append((v, w))
     while queue:
         t, node = heapq.heappop(queue)
         if dist[node] < t:
