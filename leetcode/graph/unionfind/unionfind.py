@@ -6,6 +6,7 @@ class UF(object):
         self.__parent__ = [0] * n
         # 存储树的子树个数
         self.__size__ = [0] * n
+        # 编号从0开始
         for i in range(n):
             self.__parent__[i] = i
             self.__size__[i] = 1

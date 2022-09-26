@@ -21,7 +21,7 @@ def dijkstra(src, graph):
     # set up priority queue
     pq = [(0, src)]
     while pq:
-        dist, u = heapq.heappop()
+        dist, u = heapq.heappop(pq)
         if distToSrc[u] < dist:
             continue
         for v, w in graph[u]:
