@@ -7,6 +7,7 @@ from numpy import Inf
 # [[1,10,6,7,9,10,4,9]]
 heights = [[1, 2, 2], [3, 8, 2], [5, 3, 5]]
 
+
 def minimumEffortPath(heights):
     """
     :type heights: List[List[int]]
@@ -25,7 +26,7 @@ def minimumEffortPath(heights):
     dirs = [0, 1, 0, -1, 0]
     while pq:
         w, u, v = heapq.heappop(pq)
-        print(w,u,v)
+        print(w, u, v)
         if dist[u][v] < w:
             continue
         if u == len(heights) - 1 and v == len(heights[0]) - 1:
