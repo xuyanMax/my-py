@@ -11,7 +11,7 @@ class TopoOrder(object):
             graph[fr].append(to)
         return graph
 
-    def findOrder(self, numCourses, edges):
+    def findOrder_dfs(self, numCourses, edges):
         graph = self.buildGraph(numCourses, edges)
         visited = [False] * numCourses
         onPath = [False] * numCourses
@@ -41,3 +41,24 @@ class TopoOrder(object):
         # 后序遍历位置，添加该节点
         onPath[u] = False
         postorder.append(u)
+
+    def findOrder_bfs(self, numCourses, prerequisites):
+        graph = self.buildGraph(numCourses, prerequisites)
+        in_degree = [0] * numCourses
+        for u, v in prerequisites:
+            in_degree[v] += 1
+        queue = []
+        for i in len(in_degree):
+            if in_degree[i] == 0:
+                queue.append(i)
+        count = 0
+        order = []
+        while queue:
+            curr = queue.pop()
+            count += 1
+            order.append(curr)
+            for to in graph[curr]:
+                in_degree[to] -= 1
+                if in_degree[to] == 0:
+                    queue.append(to)
+        return order if count == numCourses else []
