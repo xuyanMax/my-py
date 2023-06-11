@@ -1,7 +1,8 @@
-from LinkList import ListNode
+from linklist import ListNode
 
 
 class RemoveElements(object):
+
     def removeElements(self, head: ListNode, val: int) -> ListNode:
         while head and head.val == val:
             head = head.next

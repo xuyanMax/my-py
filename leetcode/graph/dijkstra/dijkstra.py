@@ -1,4 +1,5 @@
 import heapq
+from typing import Dict, List
 
 from numpy import Inf
 
@@ -11,11 +12,11 @@ graph = {
 }
 
 
-def dijkstra(src, graph):
-    n = len(graph)
+def dijkstra(src, g: Dict[int:List]):
+    n = len(g)
 
     # set up to source node distance list
-    #dist = [[math.inf] * n for _ in range(m)]
+    # dist = [[math.inf] * n for _ in range(m)]
     distToSrc = [Inf for _ in range(n)]
     distToSrc[src] = 0
     # set up priority queue
@@ -24,7 +25,7 @@ def dijkstra(src, graph):
         dist, u = heapq.heappop(pq)
         if distToSrc[u] < dist:
             continue
-        for v, w in graph[u]:
+        for v, w in g[u]:
             if w + distToSrc[u] < distToSrc[v]:
                 distToSrc[v] = w + distToSrc[u]
                 heapq.heappush(pq, (distToSrc[v], v))

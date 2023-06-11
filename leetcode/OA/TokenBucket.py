@@ -4,36 +4,36 @@ import time
 class TokenBucket(object):
 
     def __init__(self, msPerToken, maxToken):
-        self._msPerToken = msPerToken
-        self._maxToken = maxToken
-        self._start_time = int(time.time() * 1000)
-        self._totalNums = 0
+        self.msPerToken = msPerToken
+        self.maxToken = maxToken
+        self.start_time = int(time.time() * 1000)
+        self.totalNums = 0
 
     def worker(self):
-        if self._totalNums >= self._maxToken:
+        if self.totalNums >= self.maxToken:
             return
 
         stop_time = int(time.time() * 1000)
-        time_interval = stop_time - self._start_time
-        while time_interval >= self._msPerToken:
-            self._totalNums += 1
-            time_interval -= self._msPerToken
-            if self._totalNums == self._maxToken:
+        time_interval = stop_time - self.start_time
+        while time_interval >= self.msPerToken:
+            self.totalNums += 1
+            time_interval -= self.msPerToken
+            if self.totalNums == self.maxToken:
                 break
-        print("worker - totalTokens:", self._totalNums)
-        self._start_time = int(time.time() * 1000)
+        print("worker - totalTokens:", self.totalNums)
+        self.start_time = int(time.time() * 1000)
 
     def acquireTokens(self, numTokens):
         self.worker()
-        if numTokens >= self._maxToken:
-            self._totalNums = 0
-            return self._maxToken
-        elif self._totalNums >= numTokens:
-            self._totalNums -= numTokens
+        if numTokens >= self.maxToken:
+            self.totalNums = 0
+            return self.maxToken
+        elif self.totalNums >= numTokens:
+            self.totalNums -= numTokens
             return numTokens
-        elif self._totalNums < numTokens:
-            res = self._totalNums
-            self._totalNums = 0
+        elif self.totalNums < numTokens:
+            res = self.totalNums
+            self.totalNums = 0
             return res
         return -1
 

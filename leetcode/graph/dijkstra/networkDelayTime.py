@@ -9,7 +9,7 @@ times = [[2, 1, 1], [2, 3, 1], [3, 4, 1]]
 def networkDelayTime(self, times, N, K):
     # 定义：distToEnd[i] 的值就是节点到达节点i的最短路径权重
 
-    queue, distToEnd, adj = [(0, K)], collections.defaultdict(list)
+    queue, adj = [(0, K)], collections.defaultdict(list)
     dist = [Inf for _ in len(times)]
     for u, v, w in times:
         adj[u].append((v, w))
@@ -17,7 +17,6 @@ def networkDelayTime(self, times, N, K):
         t, node = heapq.heappop(queue)
         if dist[node] < t:
             continue
-
         dist[node] = t
         for v, w in adj[node]:
             if dist[v] > dist[node] + t:

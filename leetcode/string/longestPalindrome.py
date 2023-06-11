@@ -20,6 +20,7 @@ class LongestPalindrom(object):
             r += 1
         return s[l + 1:r]
 
+
 lp = LongestPalindrom()
 print(lp.longestPalindrome("abcbakk"))
 print("sdasd"[0:2])

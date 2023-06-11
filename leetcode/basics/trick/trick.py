@@ -1,9 +1,8 @@
 from collections import Counter
 import sys
 import time
-#from iteration_utilities import deepflatten
+# from iteration_utilities import deepflatten
 import random
-
 
 
 class trick(object):
@@ -74,23 +73,24 @@ class trick(object):
     def en(self, list):
         for index, value in enumerate(list):
             print('{0}:{1}'.format(index, value))
-    #检查对象的内存使用情况
+
+    # 检查对象的内存使用情况
     def checkMemory(self, object):
         print(sys.getsizeof(object))
 
-    #合并两个字典
+    # 合并两个字典
     def combineDict(self, dict1, dict2):
         return {**dict1, **dict2}
 
-    #计算运行时间
+    # 计算运行时间
     def calculateProgramTime(self):
         start = time.time()
-        a,b=1,2
-        c = a+b
-        print((time.time() - start)*10*6) #microsecond
+        a, b = 1, 2
+        c = a + b
+        print((time.time() - start) * 10 * 6)  # microsecond
 
     #
-    def flatten1d(self,list):
+    def flatten1d(self, list):
         return [item for sublist in list for item in sublist]
 
     #
@@ -98,17 +98,18 @@ class trick(object):
         return random.sample(list, num_sample)
 
     def int2List(self, num):
-        #return [int(x) for x in str(num)]
+        # return [int(x) for x in str(num)]
         return list(map(int, str(num)))
 
-    #以下函数将检查列表中的所有元素是否唯一。
+    # 以下函数将检查列表中的所有元素是否唯一。
     def unique(self, list):
         return len(list) == len(set(list))
 
     def createDicByTwoLists(self, list1, list2):
-        #list1 = [1, 2, 3, 4]
-        #list2 = ['a','b','c','d','e']
+        # list1 = [1, 2, 3, 4]
+        # list2 = ['a','b','c','d','e']
         return dic(zip(list1, list2))
+
 
 trick = trick()
 print(trick.reverse("asd"))
@@ -148,8 +149,7 @@ dict_1 = {'apple': 9, 'banana': 6}
 dict_2 = {'banana': 4, 'orange': 8}
 print(trick.combineDict(dict_1, dict_2))
 trick.calculateProgramTime()
-print(trick.flatten1d([[1,2,3],[3]]))
+print(trick.flatten1d([[1, 2, 3], [3]]))
 
-x, y = input().split() #使用打包功能，一行输入两个整数并用空格隔开
+x, y = input().split()  # 使用打包功能，一行输入两个整数并用空格隔开
 print(x == y)
-
