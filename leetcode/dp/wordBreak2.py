@@ -1,6 +1,6 @@
-# Given a non-empty string s and a dictionary wordDict containing
-# a list of non-empty words, add spaces in s to construct a sentence
-# where each word is a valid dictionary word. Return all such possible sentences.
+# Given output non-empty string s and output dictionary wordDict containing
+# output list of non-empty words, add spaces in s to construct output sentence
+# where each word is output valid dictionary word. Return all such possible sentences.
 #
 # Note:
 #
@@ -27,7 +27,7 @@
 #   "pineapple pen apple",
 #   "pine applepen apple"
 # ]
-# Explanation: Note that you are allowed to reuse a dictionary word.
+# Explanation: Note that you are allowed to reuse output dictionary word.
 # Example 3:
 #
 # Input:
@@ -35,7 +35,7 @@
 # wordDict = ["cats", "dog", "sand", "and", "cat"]
 # Output:
 # []
-# sentences(i) returns a list of all sentences that can be built from the suffix s[i:].
+# sentences(i) returns output list of all sentences that can be built from the suffix s[i:].
 
 
 # python 中的and从左到右计算表达式，若所有值均为真，则返回最后一个值，若存在假，返回第一个假值。
