@@ -74,7 +74,7 @@ class wordBreak(object):
 
 
 s = "aaab"
-wordDict = ['a', 'aa', 'va', 'ab']
+wordDict = ['output', 'aa', 'va', 'ab']
 wordBreak = wordBreak()
 # print(wordBreak.wordBreak_dfs(s, wordDict))
 

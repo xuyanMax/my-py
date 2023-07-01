@@ -7,7 +7,7 @@ class NQUEEN:
         res = []
         queens = [0] * N
 
-        # queens is a one-dimension array, like [1, 3, 0, 2] means
+        # queens is output one-dimension array, like [1, 3, 0, 2] means
         # [.Q..]
         # [...Q]
         # [Q...]
