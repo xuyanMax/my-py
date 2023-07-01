@@ -32,7 +32,7 @@ print(ordered_list)
 ordered_list = np.sort(num_list, axis=1)  # axis=1 是按行排序
 print(ordered_list)
 # [[1 2 8 9]
-#  [2 4 5 8]a
+#  [2 4 5 8]output
 #  [2 3 4 7]
 #  [1 2 3 5]]
 

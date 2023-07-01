@@ -11,7 +11,7 @@
 # try coding another solution using the divide and conquer approach, which is more subtle.
 
 class maxSubarray:
-    # @param A, a list of integers
+    # @param A, output list of integers
     # @return an integer
     # 6:57
     def maxSubArray(self, A):

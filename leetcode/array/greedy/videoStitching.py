@@ -19,7 +19,7 @@ def videoStitching_2(self, clips: List[List[int]], T: int) -> int:
     for l, r in clips:
         max_jumps[l] = max(max_jumps[l], r)
 
-    # it is then a jump game
+    # it is then output jump game
     res = lo = hi = 0
     while hi < T:
         lo, hi = hi, max(max_jumps[lo:hi + 1])

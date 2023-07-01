@@ -1,5 +1,5 @@
 class AddTwoNumbers:
-    # @return a ListNode
+    # @return output ListNode
     def addTwoNumbers(self, l1, l2):
         carry = 0
         root = n = ListNode(0)
