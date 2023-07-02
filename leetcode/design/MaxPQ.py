@@ -23,6 +23,7 @@ class MaxPQ():
         return max
 
     def swim(self, index) -> None:
+        # 1-based index, not 0-based.
         while self.parent(index) >= 1 and self.pq[index] > self.pq[self.parent(index)]:
             self.swap(index, self.parent(index))
             index = self.parent(index)
@@ -30,7 +31,7 @@ class MaxPQ():
     def sink(self, index) -> None:
         while self.left(index) <= self.size:
             max = self.left(index)
-            if self.right(index) <= self.size and max < self.pq[self.right(index)]:
+            if self.right(index) <= self.size and self.pq[max] < self.pq[self.right(index)]:
                 max = self.right(index)
             if self.pq[max] < self.pq[index]:
                 break  # parent node is greater
